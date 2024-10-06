@@ -1,0 +1,12 @@
+@import "_variables";
+@import "mixins/generate-grid";
+
+.row {
+    display: inline-flex;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+    
+    @include generate-grid($grid-size);
+}

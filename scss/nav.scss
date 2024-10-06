@@ -1,0 +1,28 @@
+@import "_variables";
+
+.nav{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding-left: 16px;
+    border-bottom: 1px solid $border-color;
+  }
+  .nav-item{
+    display: flex;
+    align-items: center;
+    height: 38px;
+    margin-right: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: $font-color;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .active{
+    background-color: $highlight-color;
+  }
+  .content {
+    display: flex;
+    position: relative;
+    padding: 24px;
+  }

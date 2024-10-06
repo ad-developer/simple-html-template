@@ -2,9 +2,11 @@
     "name": "simple-html-template",
     "version": "1.0.0",
     "devDependencies": {
+        "del-cli": "^5.1.0",
         "sass": "^1.79.4"
     },
     "scripts": {
-        "build": "sass scss:css --no-source-map"
-    } 
+        "clean:css": "del-cli css/**",
+        "build": "npm run clean:css && sass scss/simple-html-template.scss css/simple-html-template.scss --no-source-map"
+    }
 }
