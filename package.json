@@ -7,6 +7,6 @@
     },
     "scripts": {
         "clean:css": "del-cli css/**",
-        "build": "npm run clean:css && sass scss/simple-html-template.scss css/simple-html-template.scss --no-source-map"
+        "build": "npm run clean:css && sass scss/simple-html-template.scss css/simple-html-template.css --no-source-map"
     }
 }

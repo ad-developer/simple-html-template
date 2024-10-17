@@ -1,0 +1,36 @@
+@import "_variables";
+
+.list {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    list-style: none;
+    padding-inline: 0;
+    min-height: 100px;
+    height: 100px;
+    border:  1px solid $border-color;
+    min-width: 120px;
+    width: 120px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: nowrap;
+
+    & .list-item {
+        display: inline-flex;
+        position: relative;
+        align-items: center;
+        min-height: 40px;
+        height: 40px;
+        border-bottom:  1px solid $border-color;
+        cursor: pointer;
+        padding-left: 8px;
+        
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &:hover{
+            background-color: $highlight-color;
+        }
+    }
+}

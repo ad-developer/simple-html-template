@@ -7,7 +7,7 @@
         
         $width:  math.percentage(math.div($total, $grid-size) * $i);
         
-        .col-#{$i}-#{$grid-size} {
+        &.col-#{$i}-#{$grid-size} {
             width: $width;
         }
    }

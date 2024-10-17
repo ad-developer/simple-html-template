@@ -223,12 +223,6 @@ img {
   background-color: #ddd;
 }
 
-.content {
-  display: flex;
-  position: relative;
-  padding: 24px;
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -254,15 +248,16 @@ img {
   padding-right: 24px;
   align-items: center;
   justify-content: center;
+  align-self: start;
 }
 .button:hover {
   background-color: #ddd;
 }
-.button .button-emphasize {
+.button + .button-dark {
   background-color: #888;
   color: #fff;
 }
-.button .button-emphasize:hover {
+.button + .button-dark:hover {
   background-color: #666;
 }
 
@@ -274,39 +269,267 @@ img {
   display: flex;
   flex-direction: column;
 }
-.col .col-1-12 {
+.col.col-1-12 {
   width: 8.3333333333%;
 }
-.col .col-2-12 {
+.col.col-2-12 {
   width: 16.6666666667%;
 }
-.col .col-3-12 {
+.col.col-3-12 {
   width: 25%;
 }
-.col .col-4-12 {
+.col.col-4-12 {
   width: 33.3333333333%;
 }
-.col .col-5-12 {
+.col.col-5-12 {
   width: 41.6666666667%;
 }
-.col .col-6-12 {
+.col.col-6-12 {
   width: 50%;
 }
-.col .col-7-12 {
+.col.col-7-12 {
   width: 58.3333333333%;
 }
-.col .col-8-12 {
+.col.col-8-12 {
   width: 66.6666666667%;
 }
-.col .col-9-12 {
+.col.col-9-12 {
   width: 75%;
 }
-.col .col-10-12 {
+.col.col-10-12 {
   width: 83.3333333333%;
 }
-.col .col-11-12 {
+.col.col-11-12 {
   width: 91.6666666667%;
 }
-.col .col-12-12 {
+.col.col-12-12 {
   width: 100%;
+}
+
+.table {
+  display: table;
+  text-align: left;
+  min-width: 100%;
+  border: 0;
+  white-space: nowrap;
+  border-collapse: collapse;
+}
+.table th {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+  text-decoration: inherit;
+  text-transform: inherit;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-right: 16px;
+  padding-left: 16px;
+  height: 42px;
+  background-color: #ddd;
+}
+.table tbody tr {
+  border-top: 1px solid #ccc;
+}
+.table td {
+  height: 40px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  padding: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 16px;
+}
+.form-group .label {
+  display: flex;
+  font-size: 0.9rem;
+  line-height: 0.9rem;
+  margin-bottom: 2px;
+}
+.form-group .control-group {
+  display: flex;
+}
+.form-group .control-group .input-control {
+  display: flex;
+  width: 100%;
+  height: 25px;
+  padding-left: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.form-group .message {
+  display: inline-flex;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  padding-top: 2px;
+  padding-left: 8px;
+}
+
+textarea.input-control {
+  min-height: 60px;
+}
+
+.error {
+  color: #f61313;
+}
+
+.error .input-control {
+  color: #f61313;
+  border-color: #f61313;
+}
+
+.form-buttons {
+  display: inline-flex;
+  justify-content: left;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  list-style: none;
+  padding-inline: 0;
+  min-height: 100px;
+  height: 100px;
+  border: 1px solid #ccc;
+  min-width: 120px;
+  width: 120px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  white-space: nowrap;
+}
+.list .list-item {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  min-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  padding-left: 8px;
+}
+.list .list-item:last-child {
+  border-bottom: none;
+}
+.list .list-item:hover {
+  background-color: #ddd;
+}
+
+.pop-up {
+  display: flex;
+  visibility: hidden;
+  flex-direction: column;
+  position: absolute;
+  min-width: 40px;
+  min-height: 40px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.pop-up .pop-up-content {
+  display: flex;
+  position: relative;
+  padding: 8px;
+}
+
+.pop-up--open {
+  visibility: visible;
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 15%;
+  left: 0;
+  align-items: center;
+  justify-self: center;
+  width: 100%;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+.dialog-surfice {
+  display: flex;
+  box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
+  background-color: #fff;
+  flex-direction: column;
+  width: calc(100% - 30px);
+  min-width: 640px;
+  max-width: 865px;
+  border-radius: 2px;
+  opacity: 0;
+}
+.dialog-surfice .dialog-header {
+  display: flex;
+  align-items: center;
+  padding: 24px 24px 0;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.0125em;
+  text-decoration: inherit;
+  text-transform: inherit;
+  flex: 1;
+  margin: 0;
+}
+.dialog-surfice .dialog-body {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.03125em;
+  text-decoration: inherit;
+  text-transform: inherit;
+  margin-top: 20px;
+  padding: 0 24px 24px;
+}
+.dialog-surfice .dialog-body.dialog-body--scollable {
+  max-height: 195px;
+  overflow-x: auto;
+  overflow-y: scroll;
+}
+.dialog-surfice .dialog-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 8px;
+}
+
+.dialog-backdrop {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.87);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: -1;
+}
+
+.dialog--open {
+  visibility: visible;
+}
+.dialog--open .dialog-backdrop {
+  opacity: 0.2;
+}
+.dialog--open .dialog-surfice {
+  opacity: 1;
 }
