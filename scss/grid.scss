@@ -1,5 +1,6 @@
 @import "_variables";
 @import "mixins/generate-grid";
+@import "mixins/generate-grid-spacers-and-edgers";
 
 .row {
     display: inline-flex;
@@ -9,3 +10,5 @@
     flex-direction: column;
     @include generate-grid($grid-size);
 }
+$sizes: 4, 8, 16, 24, 32, 64;
+@include gnerate-grid-multiple-spacers($sizes);
