@@ -1,0 +1,10 @@
+{
+    "name": "simple-html-template",
+    "version": "1.0.0",
+    "devDependencies": {
+        "sass": "^1.79.4"
+    },
+    "scripts": {
+        "build": "sass scss:css --no-source-map"
+    } 
+}
