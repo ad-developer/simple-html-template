@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/simple-html-template.css">
+    <title>Index</title>
+</head>
+<body>
+    <div class="nav">
+        <a class="nav-item" href="index.html">Home</a>
+        <a class="nav-item" href="button.html">Button</a>
+        <a class="nav-item" href="data-table.html">Data Table</a>
+        <a class="nav-item" href="form.html">Form</a>
+        <a class="nav-item" href="grid.html">Grid</a>
+        <a class="nav-item" href="list.html">List</a>
+        <a class="nav-item active">Pop Up</a>
+        <a class="nav-item" href="modal-dialog.html">Modal Dialog</a>
+    </div>
+    <div class="container" style="width: 600px; margin-left: auto; margin-right: auto;padding-top: 60px; position: relative;">
+      <a href="" open-pop-up>Pop Up Click</a>
+      
+      <div pop-up class="pop-up" style="top: 80px; left: 80px; width: 300px;">
+        <div class="pop-up-content" style="flex-direction: column;">
+            This is a pop-up window where any information, form, or action controls can be added.
+           
+            <div class="row">
+                <div class="col col-6-12"></div>
+                <div class="col col-6-12">
+                    <button close-pop-up class="button">Ok</button>
+                </div>
+            </div>
+            
+        </div>
+      </div>
+    </div>
+    <script>
+        document.querySelector('[open-pop-up]').addEventListener('click',(e)=>{
+            document.querySelector('[pop-up]').classList.add('pop-up--open');
+            e.preventDefault();
+        });
+        document.querySelector('[close-pop-up]').addEventListener('click',()=>{
+            document.querySelector('[pop-up]').classList.remove('pop-up--open');
+        });
+    </script>
+</body>
+</html> 
