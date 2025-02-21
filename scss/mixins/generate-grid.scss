@@ -1,0 +1,14 @@
+@use 'sass:math';
+
+@mixin generate-grid($grid-size) {
+    $total: 1;
+   
+   @for $i from 1 through $grid-size {
+        
+        $width:  math.percentage(math.div($total, $grid-size) * $i);
+        
+        .col-#{$i}-#{$grid-size} {
+            width: $width;
+        }
+   }
+}
