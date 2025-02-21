@@ -1,0 +1,34 @@
+@use 'sass:math';
+
+@mixin generate-grid-spacers($spacer-size) {
+    $half: math.div($spacer-size, 2);
+    $zero: 0;
+    .sparcer-#{$spacer-size} {
+        .row {
+           margin-top: #{$half}px;
+           margin-bottom: #{$half}px;
+        }
+        .row:first-child{
+            margin-top: #{$zero}px;
+        } 
+        .row:last-child {
+            margin-bottom: #{$zero}px;
+        }
+        .col {
+            margin-left: #{$half}px;
+            margin-right: #{$half}px;
+        }
+        .col:first-child{
+            margin-left: #{$zero}px;
+        }
+        .col:last-child {
+            margin-right: #{$zero}px;
+        }
+    }
+}
+
+@mixin gnerate-grid-multiple-spacers($range) {
+    @each $size in $range {
+        @include generate-grid-spacers($size);    
+    }
+}
